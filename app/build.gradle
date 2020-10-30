@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
+    // buildToolsVersion rootProject.ext.buildToolsVersion
     defaultConfig {
         applicationId "com.nanchen.rxjava2examples"
         minSdkVersion rootProject.ext.minSdkVersion
@@ -11,6 +11,7 @@ android {
         versionName rootProject.ext.versionName
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
+
     buildTypes {
         release {
             minifyEnabled false
