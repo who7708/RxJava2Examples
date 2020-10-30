@@ -3,13 +3,14 @@ package com.nanchen.rxjava2examples.base;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.LayoutRes;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
+
+import androidx.annotation.LayoutRes;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.nanchen.rxjava2examples.R;
 import com.nanchen.rxjava2examples.ui.SystemBarTintManager;
@@ -29,11 +30,9 @@ public abstract class BaseActivity extends AppCompatActivity {
     /**
      * 获取布局ID
      *
-     * @return  布局id
+     * @return 布局id
      */
     protected abstract int getContentViewLayoutID();
-
-
 
     /**
      * 界面初始化前期准备
@@ -92,7 +91,7 @@ public abstract class BaseActivity extends AppCompatActivity {
             window.setStatusBarColor(setStatusBarColor());
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             //4.4-5.0使用三方工具类，有些4.4的手机有问题，这里为演示方便，不使用沉浸式
-//            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            //            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
             SystemBarTintManager tintManager = new SystemBarTintManager(this);
             tintManager.setStatusBarTintEnabled(true);
             tintManager.setStatusBarTintColor(setStatusBarColor());
@@ -106,10 +105,10 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     private Toast mToast;
 
-    protected void showToast(String desc){
-        if (mToast == null){
-            mToast = Toast.makeText(this.getApplicationContext(),desc,Toast.LENGTH_SHORT);
-        }else{
+    protected void showToast(String desc) {
+        if (mToast == null) {
+            mToast = Toast.makeText(this.getApplicationContext(), desc, Toast.LENGTH_SHORT);
+        } else {
             mToast.setText(desc);
         }
         mToast.show();

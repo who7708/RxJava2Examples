@@ -1,12 +1,13 @@
 package com.nanchen.rxjava2examples.module.rxjava2;
 
 import android.graphics.Color;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.nanchen.rxjava2examples.R;
@@ -57,7 +58,6 @@ public abstract class CategoryBaseFragment extends BaseFragment implements OnRef
         mRefreshLayout.setColorSchemeColors(Color.RED, Color.BLUE, Color.GREEN);
         mRefreshLayout.setOnRefreshListener(this);
 
-
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), LinearLayoutManager.VERTICAL));
@@ -65,7 +65,6 @@ public abstract class CategoryBaseFragment extends BaseFragment implements OnRef
         mRecyclerView.setAdapter(adapter);
 
     }
-
 
     @Override
     public void onRefresh() {
