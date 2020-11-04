@@ -16,7 +16,6 @@ import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
 /**
- *
  * 减少频繁的网络请求  debounce
  *
  * debounce 操作符可以过滤掉发射频率过快的数据项
@@ -43,7 +42,8 @@ public class RxCaseDebounceActivity extends RxOperatorBaseActivity {
         super.initView(savedInstanceState);
 
         RxView.clicks(mRxOperatorsBtn)
-                .debounce(2,TimeUnit.SECONDS) // 过滤掉发射频率小于2秒的发射事件
+                // 过滤掉发射频率小于2秒的发射事件
+                .debounce(2, TimeUnit.SECONDS)
                 .subscribe(new Consumer<Object>() {
                     @Override
                     public void accept(@NonNull Object o) throws Exception {
@@ -51,27 +51,29 @@ public class RxCaseDebounceActivity extends RxOperatorBaseActivity {
                     }
                 });
 
-
     }
 
     private void clickBtn() {
         Rx2AndroidNetworking.get("http://www.tngou.net/api/food/list")
-                .addQueryParameter("rows",2+"") // 只获取两条数据
+                // 只获取两条数据
+                .addQueryParameter("rows", 2 + "")
                 .build()
                 .getObjectObservable(FoodList.class)
-                .subscribeOn(Schedulers.io())  // 在 io 线程进行网络请求
-                .observeOn(AndroidSchedulers.mainThread()) // 在主线程进行更新UI等操作
+                // 在 io 线程进行网络请求
+                .subscribeOn(Schedulers.io())
+                // 在主线程进行更新UI等操作
+                .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Consumer<FoodList>() {
                     @Override
                     public void accept(@NonNull FoodList foodList) throws Exception {
-                        Log.e(TAG, "accept: 获取数据成功:"+foodList.toString()+"\n" );
-                        mRxOperatorsText.append("accept: 获取数据成功:"+foodList.toString()+"\n" );
+                        Log.e(TAG, "accept: 获取数据成功:" + foodList.toString() + "\n");
+                        mRxOperatorsText.append("accept: 获取数据成功:" + foodList.toString() + "\n");
                     }
                 }, new Consumer<Throwable>() {
                     @Override
                     public void accept(@NonNull Throwable throwable) throws Exception {
-                        Log.e(TAG, "accept: 获取数据失败："+throwable.getMessage() +"\n");
-                        mRxOperatorsText.append("accept: 获取数据失败："+throwable.getMessage() +"\n");
+                        Log.e(TAG, "accept: 获取数据失败：" + throwable.getMessage() + "\n");
+                        mRxOperatorsText.append("accept: 获取数据失败：" + throwable.getMessage() + "\n");
                     }
                 });
     }

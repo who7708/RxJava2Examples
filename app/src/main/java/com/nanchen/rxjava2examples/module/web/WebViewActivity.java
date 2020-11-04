@@ -5,8 +5,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import com.google.android.material.appbar.AppBarLayout;
-import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.webkit.WebChromeClient;
@@ -16,6 +14,9 @@ import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import androidx.appcompat.widget.Toolbar;
+
+import com.google.android.material.appbar.AppBarLayout;
 import com.nanchen.rxjava2examples.R;
 import com.nanchen.rxjava2examples.base.BaseActivity;
 import com.nanchen.rxjava2examples.module.web.WebContract.IWebPresenter;
@@ -40,10 +41,10 @@ public class WebViewActivity extends BaseActivity implements IWebView {
 
     private IWebPresenter mWebPresenter;
 
-    public static void start(Context context,String url,String title){
+    public static void start(Context context, String url, String title) {
         Intent intent = new Intent(context, WebViewActivity.class);
-        intent.putExtra(WebViewActivity.GANK_TITLE,title);
-        intent.putExtra(WebViewActivity.GANK_URL,url);
+        intent.putExtra(WebViewActivity.GANK_TITLE, title);
+        intent.putExtra(WebViewActivity.GANK_URL, url);
         context.startActivity(intent);
     }
 
@@ -51,8 +52,6 @@ public class WebViewActivity extends BaseActivity implements IWebView {
     protected int getContentViewLayoutID() {
         return R.layout.activity_web_view;
     }
-
-
 
     @Override
     protected void initView(Bundle savedInstanceState) {
@@ -68,8 +67,6 @@ public class WebViewActivity extends BaseActivity implements IWebView {
 
         mWebPresenter.subscribe();
     }
-
-
 
     @Override
     protected void onDestroy() {

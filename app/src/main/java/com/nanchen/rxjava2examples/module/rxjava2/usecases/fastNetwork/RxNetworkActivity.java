@@ -13,7 +13,6 @@ import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 
-
 /**
  * Rx2AndroidNetworking
  *
@@ -43,19 +42,19 @@ public class RxNetworkActivity extends RxOperatorBaseActivity {
                 .doOnNext(new Consumer<MobileAddress>() {
                     @Override
                     public void accept(@NonNull MobileAddress data) throws Exception {
-                        Log.e(TAG, "doOnNext:"+Thread.currentThread().getName()+"\n" );
-                        mRxOperatorsText.append("\ndoOnNext:"+Thread.currentThread().getName()+"\n" );
-                        Log.e(TAG,"doOnNext:"+data.toString()+"\n");
-                        mRxOperatorsText.append("doOnNext:"+data.toString()+"\n");
+                        Log.e(TAG, "doOnNext:" + Thread.currentThread().getName() + "\n");
+                        mRxOperatorsText.append("\ndoOnNext:" + Thread.currentThread().getName() + "\n");
+                        Log.e(TAG, "doOnNext:" + data.toString() + "\n");
+                        mRxOperatorsText.append("doOnNext:" + data.toString() + "\n");
                     }
                 })
                 .map(new Function<MobileAddress, ResultBean>() {
                     @Override
                     public ResultBean apply(@NonNull MobileAddress mobileAddress) throws Exception {
-                        Log.e(TAG, "\n" );
+                        Log.e(TAG, "\n");
                         mRxOperatorsText.append("\n");
-                        Log.e(TAG, "map:"+Thread.currentThread().getName()+"\n" );
-                        mRxOperatorsText.append("map:"+Thread.currentThread().getName()+"\n" );
+                        Log.e(TAG, "map:" + Thread.currentThread().getName() + "\n");
+                        mRxOperatorsText.append("map:" + Thread.currentThread().getName() + "\n");
                         return mobileAddress.getResult();
                     }
                 })
@@ -64,18 +63,18 @@ public class RxNetworkActivity extends RxOperatorBaseActivity {
                 .subscribe(new Consumer<ResultBean>() {
                     @Override
                     public void accept(@NonNull ResultBean data) throws Exception {
-                        Log.e(TAG, "subscribe 成功:"+Thread.currentThread().getName()+"\n" );
-                        mRxOperatorsText.append("\nsubscribe 成功:"+Thread.currentThread().getName()+"\n" );
+                        Log.e(TAG, "subscribe 成功:" + Thread.currentThread().getName() + "\n");
+                        mRxOperatorsText.append("\nsubscribe 成功:" + Thread.currentThread().getName() + "\n");
                         Log.e(TAG, "成功:" + data.toString() + "\n");
                         mRxOperatorsText.append("成功:" + data.toString() + "\n");
                     }
                 }, new Consumer<Throwable>() {
                     @Override
                     public void accept(@NonNull Throwable throwable) throws Exception {
-                        Log.e(TAG, "subscribe 失败:"+Thread.currentThread().getName()+"\n" );
-                        mRxOperatorsText.append("\nsubscribe 失败:"+Thread.currentThread().getName()+"\n" );
-                        Log.e(TAG, "失败："+ throwable.getMessage()+"\n" );
-                        mRxOperatorsText.append("失败："+ throwable.getMessage()+"\n");
+                        Log.e(TAG, "subscribe 失败:" + Thread.currentThread().getName() + "\n");
+                        mRxOperatorsText.append("\nsubscribe 失败:" + Thread.currentThread().getName() + "\n");
+                        Log.e(TAG, "失败：" + throwable.getMessage() + "\n");
+                        mRxOperatorsText.append("失败：" + throwable.getMessage() + "\n");
                     }
                 });
     }

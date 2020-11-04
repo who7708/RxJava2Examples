@@ -45,7 +45,7 @@ public class RxOperatorsActivity extends ToolbarBaseActivity {
         return false;
     }
 
-    @OnClick({R.id.rx_btn_create, R.id.rx_btn_just, R.id.rx_btn_map, R.id.rx_btn_flatMap,R.id.rx_btn_concatMap, R.id.rx_btn_zip})
+    @OnClick({R.id.rx_btn_create, R.id.rx_btn_just, R.id.rx_btn_map, R.id.rx_btn_flatMap, R.id.rx_btn_concatMap, R.id.rx_btn_zip})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.rx_btn_create:
@@ -68,6 +68,5 @@ public class RxOperatorsActivity extends ToolbarBaseActivity {
                 break;
         }
     }
-
 
 }

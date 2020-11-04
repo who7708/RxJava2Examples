@@ -23,7 +23,6 @@ import io.reactivex.schedulers.Schedulers;
 public class RxThreadActivity extends RxOperatorBaseActivity {
     private static final String TAG = "RxThreadActivity";
 
-
     @Override
     protected String getSubTitle() {
         return "线程调度";

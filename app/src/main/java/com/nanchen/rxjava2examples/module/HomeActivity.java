@@ -45,11 +45,12 @@ public class HomeActivity extends BaseActivity {
 
     @Override
     protected void initView(Bundle savedInstanceState) {
-        //        StatusBarUtil.setTranslucent(this);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) { // 4.4 以上版本
+        // StatusBarUtil.setTranslucent(this);
+        // 4.4 以上版本
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             // 设置 Toolbar 高度为 80dp，适配状态栏
             ViewGroup.LayoutParams layoutParams = mToolbarTitle.getLayoutParams();
-            //            layoutParams.height = ScreenUtil.dip2px(this,ScreenUtil.getStatusBarHeight(this));
+            // layoutParams.height = ScreenUtil.dip2px(this,ScreenUtil.getStatusBarHeight(this));
             layoutParams.height = ScreenUtil.dip2px(this, 80);
             mToolbarTitle.setLayoutParams(layoutParams);
         }

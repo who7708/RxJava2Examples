@@ -29,13 +29,13 @@ public class RxTakeActivity extends RxOperatorBaseActivity {
 
     @Override
     protected void doSomething() {
-        Flowable.fromArray(1,2,3,4,5)
+        Flowable.fromArray(1, 2, 3, 4, 5)
                 .take(2)
                 .subscribe(new Consumer<Integer>() {
                     @Override
                     public void accept(@NonNull Integer integer) throws Exception {
-                        mRxOperatorsText.append("take : "+integer + "\n");
-                        Log.e(TAG, "accept: take : "+integer + "\n" );
+                        mRxOperatorsText.append("take : " + integer + "\n");
+                        Log.e(TAG, "accept: take : " + integer + "\n");
                     }
                 });
     }

@@ -22,7 +22,6 @@ import okhttp3.Response;
 import okhttp3.ResponseBody;
 
 /**
- *
  * 采用 OkHttp3 配合 map , doOnNext , 线程切换做简单的网络请求
  *
  * 1、通过 Observable.create() 方法，调用 OkHttp 网络请求;
@@ -58,20 +57,20 @@ public class RxNetSingleActivity extends RxOperatorBaseActivity {
                 e.onNext(response);
             }
         }).map(new Function<Response, MobileAddress>() {
-                    @Override
-                    public MobileAddress apply(@NonNull Response response) throws Exception {
+            @Override
+            public MobileAddress apply(@NonNull Response response) throws Exception {
 
-                        Log.e(TAG, "map 线程:" + Thread.currentThread().getName() + "\n");
-                        if (response.isSuccessful()) {
-                            ResponseBody body = response.body();
-                            if (body != null) {
-                                Log.e(TAG, "map:转换前:" + response.body());
-                                return new Gson().fromJson(body.string(), MobileAddress.class);
-                            }
-                        }
-                        return null;
+                Log.e(TAG, "map 线程:" + Thread.currentThread().getName() + "\n");
+                if (response.isSuccessful()) {
+                    ResponseBody body = response.body();
+                    if (body != null) {
+                        Log.e(TAG, "map:转换前:" + response.body());
+                        return new Gson().fromJson(body.string(), MobileAddress.class);
                     }
-                }).observeOn(AndroidSchedulers.mainThread())
+                }
+                return null;
+            }
+        }).observeOn(AndroidSchedulers.mainThread())
                 .doOnNext(new Consumer<MobileAddress>() {
                     @Override
                     public void accept(@NonNull MobileAddress s) throws Exception {

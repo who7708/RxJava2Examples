@@ -5,7 +5,6 @@ import android.app.Activity;
 import com.nanchen.rxjava2examples.base.BasePresenter;
 import com.nanchen.rxjava2examples.base.BaseView;
 
-
 /**
  * WebContract
  *

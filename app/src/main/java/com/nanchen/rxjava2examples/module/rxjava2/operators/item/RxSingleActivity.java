@@ -41,17 +41,16 @@ public class RxSingleActivity extends RxOperatorBaseActivity {
 
                     @Override
                     public void onSuccess(@NonNull Integer integer) {
-                        mRxOperatorsText.append("single : onSuccess : "+integer+"\n");
-                        Log.e(TAG, "single : onSuccess : "+integer+"\n" );
+                        mRxOperatorsText.append("single : onSuccess : " + integer + "\n");
+                        Log.e(TAG, "single : onSuccess : " + integer + "\n");
                     }
 
                     @Override
                     public void onError(@NonNull Throwable e) {
-                        mRxOperatorsText.append("single : onError : "+e.getMessage()+"\n");
-                        Log.e(TAG, "single : onError : "+e.getMessage()+"\n");
+                        mRxOperatorsText.append("single : onError : " + e.getMessage() + "\n");
+                        Log.e(TAG, "single : onError : " + e.getMessage() + "\n");
                     }
                 });
-
 
     }
 }

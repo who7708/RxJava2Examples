@@ -33,7 +33,6 @@ public class RxCaseFlatMapActivity extends RxOperatorBaseActivity {
 
     private static final String TAG = "RxCaseFlatMapActivity";
 
-
     @Override
     protected String getSubTitle() {
         return "多个网络请求依次依赖";
@@ -55,7 +54,7 @@ public class RxCaseFlatMapActivity extends RxOperatorBaseActivity {
                     public void accept(@NonNull FoodList foodList) throws Exception {
                         // 先根据获取食品列表的响应结果做一些操作
                         Log.e(TAG, "accept: doOnNext :" + foodList.toString());
-                        mRxOperatorsText.append("accept: doOnNext :" + foodList.toString()+"\n");
+                        mRxOperatorsText.append("accept: doOnNext :" + foodList.toString() + "\n");
                     }
                 })
                 .observeOn(Schedulers.io()) // 回到 io 线程去处理获取食品详情的请求
@@ -77,13 +76,13 @@ public class RxCaseFlatMapActivity extends RxOperatorBaseActivity {
                     @Override
                     public void accept(@NonNull FoodDetail foodDetail) throws Exception {
                         Log.e(TAG, "accept: success ：" + foodDetail.toString());
-                        mRxOperatorsText.append("accept: success ：" + foodDetail.toString()+"\n");
+                        mRxOperatorsText.append("accept: success ：" + foodDetail.toString() + "\n");
                     }
                 }, new Consumer<Throwable>() {
                     @Override
                     public void accept(@NonNull Throwable throwable) throws Exception {
                         Log.e(TAG, "accept: error :" + throwable.getMessage());
-                        mRxOperatorsText.append("accept: error :" + throwable.getMessage()+"\n");
+                        mRxOperatorsText.append("accept: error :" + throwable.getMessage() + "\n");
                     }
                 });
 

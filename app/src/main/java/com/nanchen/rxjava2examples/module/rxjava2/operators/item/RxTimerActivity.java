@@ -49,5 +49,4 @@ public class RxTimerActivity extends RxOperatorBaseActivity {
                 });
     }
 
-
 }

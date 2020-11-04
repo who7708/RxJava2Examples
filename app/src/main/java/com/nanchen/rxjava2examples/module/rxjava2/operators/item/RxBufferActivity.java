@@ -24,6 +24,7 @@ import io.reactivex.functions.Consumer;
 public class RxBufferActivity extends RxOperatorBaseActivity {
 
     private static final String TAG = "RxBufferActivity";
+
     @Override
     protected String getSubTitle() {
         return getString(R.string.rx_buffer);
@@ -39,7 +40,7 @@ public class RxBufferActivity extends RxOperatorBaseActivity {
                         mRxOperatorsText.append("buffer size : " + integers.size() + "\n");
                         Log.e(TAG, "buffer size : " + integers.size() + "\n");
                         mRxOperatorsText.append("buffer value : ");
-                        Log.e(TAG, "buffer value : " );
+                        Log.e(TAG, "buffer value : ");
                         for (Integer i : integers) {
                             mRxOperatorsText.append(i + "");
                             Log.e(TAG, i + "");

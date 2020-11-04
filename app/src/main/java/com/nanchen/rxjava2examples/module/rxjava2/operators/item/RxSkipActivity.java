@@ -28,13 +28,13 @@ public class RxSkipActivity extends RxOperatorBaseActivity {
 
     @Override
     protected void doSomething() {
-        Observable.just(1,2,3,4,5)
+        Observable.just(1, 2, 3, 4, 5)
                 .skip(2)
                 .subscribe(new Consumer<Integer>() {
                     @Override
                     public void accept(@NonNull Integer integer) throws Exception {
-                        mRxOperatorsText.append("skip : "+integer + "\n");
-                        Log.e(TAG, "skip : "+integer + "\n");
+                        mRxOperatorsText.append("skip : " + integer + "\n");
+                        Log.e(TAG, "skip : " + integer + "\n");
                     }
                 });
     }

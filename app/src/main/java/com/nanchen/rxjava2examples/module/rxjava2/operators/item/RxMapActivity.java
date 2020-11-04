@@ -11,7 +11,6 @@ import io.reactivex.annotations.NonNull;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 
-
 /**
  * map
  * <p>
@@ -48,8 +47,8 @@ public class RxMapActivity extends RxOperatorBaseActivity {
         }).subscribe(new Consumer<String>() {
             @Override
             public void accept(@NonNull String s) throws Exception {
-                mRxOperatorsText.append("accept : " + s +"\n");
-                Log.e(TAG, "accept : " + s +"\n" );
+                mRxOperatorsText.append("accept : " + s + "\n");
+                Log.e(TAG, "accept : " + s + "\n");
             }
         });
     }

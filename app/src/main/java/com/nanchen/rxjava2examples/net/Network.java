@@ -17,7 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Network {
     private static GankApi gankApi;
-    private static OkHttpClient okHttpClient = new OkHttpClient();
+    private static final OkHttpClient okHttpClient = new OkHttpClient();
 
     public static GankApi getGankApi() {
         if (gankApi == null) {

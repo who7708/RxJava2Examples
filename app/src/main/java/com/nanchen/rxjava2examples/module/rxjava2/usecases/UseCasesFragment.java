@@ -30,10 +30,10 @@ public class UseCasesFragment extends CategoryBaseFragment {
         data = new ArrayList<>();
         data.add(new OperatorModel("单一的网络请求",
                 "1、通过 Observable.create() 方法，调用 OkHttp 网络请求;\n" +
-                "2、通过 map 操作符结合 Gson , 将 Response 转换为 bean 类;\n" +
-                "3、通过 doOnNext() 方法，解析 bean 中的数据，并进行数据库存储等操作;\n" +
-                "4、调度线程，在子线程进行耗时操作任务，在主线程更新 UI;\n" +
-                "5、通过 subscribe(),根据请求成功或者失败来更新 UI。"));
+                        "2、通过 map 操作符结合 Gson , 将 Response 转换为 bean 类;\n" +
+                        "3、通过 doOnNext() 方法，解析 bean 中的数据，并进行数据库存储等操作;\n" +
+                        "4、调度线程，在子线程进行耗时操作任务，在主线程更新 UI;\n" +
+                        "5、通过 subscribe(),根据请求成功或者失败来更新 UI。"));
         data.add(new OperatorModel("使用框架 rx2-Networking",
                 "1、通过 Rx2AndroidNetworking 的 get() 方法获取 Observable 对象(已解析)；\n" +
                         "2、调度线程，根据请求结果更新 UI。"));
@@ -59,7 +59,6 @@ public class UseCasesFragment extends CategoryBaseFragment {
                         "- 多次指定发射事件的线程只有第一次指定的有效，也就是说多次调用 subscribeOn() 只有第一次的有效，其余的会被忽略。\n" +
                         "- 但多次指定订阅者接收线程是可以的，也就是说每调用一次 observerOn()，下游的线程就会切换一次。"));
     }
-
 
     @Override
     protected void itemClick(int position) {
@@ -88,6 +87,7 @@ public class UseCasesFragment extends CategoryBaseFragment {
             case 7:
                 startActivity(new Intent(getActivity(), RxThreadActivity.class));
                 break;
+            default:
         }
     }
 

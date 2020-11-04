@@ -1,10 +1,11 @@
 package com.nanchen.rxjava2examples.base;
 
 import android.os.Bundle;
-import androidx.annotation.Nullable;
-import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
 
 import com.jaeger.library.StatusBarUtil;
 import com.nanchen.rxjava2examples.R;
@@ -26,27 +27,25 @@ public abstract class ToolbarBaseActivity extends BaseActivity {
     @BindView(R.id.title_text)
     TextView mTitleName;
 
-
     /**
      * 设置标题文本
      */
     protected abstract String getSubTitle();
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        StatusBarUtil.setColor(this,getResources().getColor(R.color.blue)); //
+        StatusBarUtil.setColor(this, getResources().getColor(R.color.blue)); //
         if (getContentViewLayoutID() != 0) {
             initToolbar();
         }
     }
 
     private void initToolbar() {
-        if (mToolbar != null){
+        if (mToolbar != null) {
             mToolbar.setTitle("");
             mTitleName.setText(getSubTitle());
-            if (isShowBack()){
+            if (isShowBack()) {
                 showBack();
             }
         }
@@ -55,7 +54,7 @@ public abstract class ToolbarBaseActivity extends BaseActivity {
     /**
      * 版本号小于21的后退按钮图片
      */
-    private void showBack(){
+    private void showBack() {
         //setNavigationIcon必须在setSupportActionBar(toolbar);方法后面加入
         setSupportActionBar(mToolbar);
         mToolbar.setNavigationIcon(R.mipmap.icon_back);
@@ -67,8 +66,7 @@ public abstract class ToolbarBaseActivity extends BaseActivity {
         });
     }
 
-
-    protected boolean isShowBack(){
+    protected boolean isShowBack() {
         return true;
     }
 

@@ -1,12 +1,13 @@
 package com.nanchen.rxjava2examples.util;
 
 import android.content.Context;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.ViewPropertyAnimatorListener;
-import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Interpolator;
+
+import androidx.core.view.ViewCompat;
+import androidx.core.view.ViewPropertyAnimatorListener;
+import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 
 /**
  * Author: nanchen
@@ -46,7 +47,9 @@ public class AnimHelper {
         int height = view.getHeight();
         ViewGroup.LayoutParams params = view.getLayoutParams();
         ViewGroup.MarginLayoutParams layoutParams = params instanceof ViewGroup.MarginLayoutParams ? ((ViewGroup.MarginLayoutParams) params) : null;
-        if (layoutParams != null) height += layoutParams.bottomMargin;
+        if (layoutParams != null) {
+            height += layoutParams.bottomMargin;
+        }
         ViewCompat.animate(view).translationY(height).setDuration(DURATION).setListener(listener).setInterpolator(INTERPOLATOR).withLayer().start();
     }
 

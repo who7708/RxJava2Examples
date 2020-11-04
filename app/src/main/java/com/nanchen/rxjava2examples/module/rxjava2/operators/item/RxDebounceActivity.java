@@ -24,7 +24,7 @@ import io.reactivex.schedulers.Schedulers;
  * Date: 2017-06-22  10:41
  */
 
-public class RxDebounceActivity extends RxOperatorBaseActivity{
+public class RxDebounceActivity extends RxOperatorBaseActivity {
 
     private static final String TAG = "RxDebounceActivity";
 
@@ -58,7 +58,7 @@ public class RxDebounceActivity extends RxOperatorBaseActivity{
                     @Override
                     public void accept(@NonNull Integer integer) throws Exception {
                         mRxOperatorsText.append("debounce :" + integer + "\n");
-                        Log.e(TAG,"debounce :" + integer + "\n");
+                        Log.e(TAG, "debounce :" + integer + "\n");
                     }
                 });
     }

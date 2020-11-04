@@ -28,12 +28,12 @@ public class RxConcatActivity extends RxOperatorBaseActivity {
 
     @Override
     protected void doSomething() {
-        Observable.concat(Observable.just(1,2,3), Observable.just(4,5,6))
+        Observable.concat(Observable.just(1, 2, 3), Observable.just(4, 5, 6))
                 .subscribe(new Consumer<Integer>() {
                     @Override
                     public void accept(@NonNull Integer integer) throws Exception {
-                        mRxOperatorsText.append("concat : "+ integer + "\n");
-                        Log.e(TAG, "concat : "+ integer + "\n" );
+                        mRxOperatorsText.append("concat : " + integer + "\n");
+                        Log.e(TAG, "concat : " + integer + "\n");
                     }
                 });
     }

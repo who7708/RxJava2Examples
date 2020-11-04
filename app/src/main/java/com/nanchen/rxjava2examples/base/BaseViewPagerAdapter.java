@@ -16,8 +16,8 @@ import java.util.List;
  */
 
 public class BaseViewPagerAdapter extends FragmentPagerAdapter {
-    private String[] title;
-    private List<Fragment> mFragments = new ArrayList<>();
+    private final String[] title;
+    private final List<Fragment> mFragments = new ArrayList<>();
 
     public BaseViewPagerAdapter(FragmentManager fm, String[] titles) {
         super(fm);

@@ -10,7 +10,6 @@ import com.nanchen.rxjava2examples.base.ToolbarBaseActivity;
 import butterknife.BindView;
 import butterknife.OnClick;
 
-
 /**
  * 每一种RxJava 2.x 操作符的基类
  *
@@ -39,7 +38,6 @@ public abstract class RxOperatorBaseActivity extends ToolbarBaseActivity {
     protected abstract String getSubTitle();
 
     protected abstract void doSomething();
-
 
     @OnClick(R.id.rx_operators_btn)
     public void onViewClicked() {

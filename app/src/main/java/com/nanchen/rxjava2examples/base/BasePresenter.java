@@ -10,5 +10,6 @@ package com.nanchen.rxjava2examples.base;
 
 public interface BasePresenter {
     void subscribe();
+
     void unSubscribe();
 }

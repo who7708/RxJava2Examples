@@ -9,7 +9,6 @@ import io.reactivex.annotations.NonNull;
 import io.reactivex.functions.BiFunction;
 import io.reactivex.functions.Consumer;
 
-
 /**
  * reduce
  * <p>

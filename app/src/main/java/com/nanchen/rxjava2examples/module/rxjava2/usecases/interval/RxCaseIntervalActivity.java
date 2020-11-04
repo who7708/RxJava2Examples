@@ -38,15 +38,15 @@ public class RxCaseIntervalActivity extends RxOperatorBaseActivity {
                 .doOnNext(new Consumer<Long>() {
                     @Override
                     public void accept(@NonNull Long aLong) throws Exception {
-                        Log.e(TAG, "accept: doOnNext : "+aLong );
+                        Log.e(TAG, "accept: doOnNext : " + aLong);
                     }
                 })
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Consumer<Long>() {
                     @Override
                     public void accept(@NonNull Long aLong) throws Exception {
-                        Log.e(TAG, "accept: 设置文本 ："+aLong );
-                        mRxOperatorsText.append("accept: 设置文本 ："+aLong +"\n");
+                        Log.e(TAG, "accept: 设置文本 ：" + aLong);
+                        mRxOperatorsText.append("accept: 设置文本 ：" + aLong + "\n");
                     }
                 });
     }
@@ -57,7 +57,7 @@ public class RxCaseIntervalActivity extends RxOperatorBaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (mDisposable != null){
+        if (mDisposable != null) {
             mDisposable.dispose();
         }
     }

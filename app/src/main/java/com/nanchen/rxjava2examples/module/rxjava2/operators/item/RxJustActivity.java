@@ -29,7 +29,6 @@ public class RxJustActivity extends RxOperatorBaseActivity {
         return getString(R.string.rx_just);
     }
 
-
     /**
      * RxJava 2.x 新增Consumer，可自定义实现，accept 里面相当于原本的onNext
      */
@@ -42,7 +41,7 @@ public class RxJustActivity extends RxOperatorBaseActivity {
                     @Override
                     public void accept(@NonNull String s) throws Exception {
                         mRxOperatorsText.append("accept : onNext : " + s + "\n");
-                        Log.e(TAG,"accept : onNext : " + s + "\n" );
+                        Log.e(TAG, "accept : onNext : " + s + "\n");
                     }
                 });
     }

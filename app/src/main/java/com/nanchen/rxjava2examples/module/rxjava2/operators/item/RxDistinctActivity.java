@@ -20,6 +20,7 @@ import io.reactivex.functions.Consumer;
 
 public class RxDistinctActivity extends RxOperatorBaseActivity {
     private static final String TAG = "RxDistinctActivity";
+
     @Override
     protected String getSubTitle() {
         return getString(R.string.rx_distinct);

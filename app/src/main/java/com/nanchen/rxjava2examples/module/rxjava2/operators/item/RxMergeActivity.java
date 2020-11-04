@@ -21,6 +21,7 @@ import io.reactivex.functions.Consumer;
 public class RxMergeActivity extends RxOperatorBaseActivity {
 
     private static final String TAG = "RxMergeActivity";
+
     @Override
     protected String getSubTitle() {
         return getString(R.string.rx_merge);
@@ -33,7 +34,7 @@ public class RxMergeActivity extends RxOperatorBaseActivity {
                     @Override
                     public void accept(@NonNull Integer integer) throws Exception {
                         mRxOperatorsText.append("merge :" + integer + "\n");
-                        Log.e(TAG, "accept: merge :" + integer + "\n" );
+                        Log.e(TAG, "accept: merge :" + integer + "\n");
                     }
                 });
     }

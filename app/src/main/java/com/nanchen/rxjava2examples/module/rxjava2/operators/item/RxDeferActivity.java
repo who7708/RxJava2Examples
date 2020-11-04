@@ -41,7 +41,6 @@ public class RxDeferActivity extends RxOperatorBaseActivity {
             }
         });
 
-
         observable.subscribe(new Observer<Integer>() {
             @Override
             public void onSubscribe(@NonNull Disposable d) {
